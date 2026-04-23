@@ -226,7 +226,7 @@
       </ul>
 
       <!-- Desktop CTA -->
-      <a onclick="openMenuModal(); return false;" class="btn-primary hidden md:inline-flex items-center gap-2 bg-gold text-slate text-[13px] font-600 px-5 py-2.5 rounded-full tracking-wide cursor-pointer">
+      <a onclick="openMenuModal(true); return false;" class="btn-primary hidden md:inline-flex items-center gap-2 bg-gold text-slate text-[13px] font-600 px-5 py-2.5 rounded-full tracking-wide cursor-pointer">
         Order Now
       </a>
 
@@ -246,7 +246,7 @@
         <a href="#services" class="hover:text-gold transition-colors duration-300">Services</a>
         <a href="#faq" class="hover:text-gold transition-colors duration-300">FAQ</a>
         <a href="#footer" class="hover:text-gold transition-colors duration-300">Contact</a>
-        <a onclick="openMenuModal(); return false;" class="mt-2 btn-primary inline-flex items-center justify-center gap-2 bg-gold text-slate text-sm font-600 px-5 py-3 rounded-full cursor-pointer">
+        <a onclick="openMenuModal(true); return false;" class="mt-2 btn-primary inline-flex items-center justify-center gap-2 bg-gold text-slate text-sm font-600 px-5 py-3 rounded-full cursor-pointer">
           Order Now
         </a>
       </div>
@@ -280,12 +280,9 @@
         </p>
 
         <div id="heroCtas" class="flex flex-wrap items-center gap-4 pt-2 opacity-0">
-          <a href="tel:+19033554583" class="btn-primary inline-flex items-center gap-2 bg-gold text-slate text-sm font-600 px-7 py-3.5 rounded-full tracking-wide">
-            Order Online
+          <a href="#" onclick="openMenuModal(true); return false;" class="btn-primary inline-flex items-center gap-2 bg-gold text-slate text-sm font-600 px-9 py-4 rounded-full tracking-wide">
+            Start My Order
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-          <a href="#" onclick="openMenuModal(); return false;" class="btn-ghost inline-flex items-center gap-2 text-sm font-600 text-ivory border border-ivory/20 px-7 py-3.5 rounded-full tracking-wide">
-            View Menu
           </a>
         </div>
       </div>
@@ -468,10 +465,10 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1.001A3.75 3.75 0 0012 18z"/></svg>
         </div>
         <h2 class="font-display font-800 text-3xl sm:text-4xl text-ivory tracking-tight">Ready for BBQ?</h2>
-        <p class="font-body font-400 text-ash text-base leading-relaxed">Call now to place your order. Fresh off the pit, ready when you&nbsp;arrive.</p>
-        <a href="tel:+19033554583" class="btn-primary inline-flex items-center justify-center gap-2 bg-gold text-slate text-lg font-600 px-10 py-4 rounded-full tracking-wide w-full">
-          Call (903) 355-4583
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+        <p class="font-body font-400 text-ash text-base leading-relaxed">Place your order online. Fresh off the pit, ready when you&nbsp;arrive.</p>
+        <a href="#" onclick="closeOrderModal(); setTimeout(function() { openMenuModal(true); }, 450); return false;" class="btn-primary inline-flex items-center justify-center gap-2 bg-gold text-slate text-lg font-600 px-10 py-4 rounded-full tracking-wide w-full">
+          Start My Order
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
       </div>
     </div>
@@ -812,99 +809,314 @@
           <p class="font-body font-400 text-ash text-xs italic mb-5">Our meats are seasoned simply with Kosher salt and 16-mesh black pepper</p>
 
           <!-- Prime Brisket -->
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 py-3 border-b border-line_dark">
-            <span class="font-body font-600 text-ivory text-[15px]">Prime Brisket</span>
-            <span class="font-body font-400 text-gold text-sm">Half Pound <span class="font-600">$14.99</span>&ensp;|&ensp;One Pound <span class="font-600">$29.99</span></span>
+          <div class="py-3 border-b border-line_dark">
+            <div class="font-body font-600 text-ivory text-[15px] mb-3">Prime Brisket</div>
+            <div class="flex items-center justify-between gap-3 pl-2 mb-2">
+              <span class="font-body font-400 text-gold text-sm">Half Pound — <span class="font-600">$14.99</span></span>
+              <div class="qty-stepper flex items-center gap-1 shrink-0">
+                <button type="button" class="qty-dec w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="brisket_half" aria-label="Decrease quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M5 12h14"/></svg></button>
+                <span class="qty-val w-7 text-center font-body font-600 text-ivory text-sm" data-item="brisket_half">0</span>
+                <button type="button" class="qty-inc w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="brisket_half" aria-label="Increase quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></button>
+              </div>
+            </div>
+            <div class="flex items-center justify-between gap-3 pl-2">
+              <span class="font-body font-400 text-gold text-sm">One Pound — <span class="font-600">$29.99</span></span>
+              <div class="qty-stepper flex items-center gap-1 shrink-0">
+                <button type="button" class="qty-dec w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="brisket_pound" aria-label="Decrease quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M5 12h14"/></svg></button>
+                <span class="qty-val w-7 text-center font-body font-600 text-ivory text-sm" data-item="brisket_pound">0</span>
+                <button type="button" class="qty-inc w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="brisket_pound" aria-label="Increase quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></button>
+              </div>
+            </div>
           </div>
 
           <!-- Angus Choice Beef Ribs -->
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 py-3 border-b border-line_dark">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 py-3 border-b border-line_dark">
             <div>
               <span class="font-body font-600 text-ivory text-[15px]">Angus Choice Beef Ribs</span>
               <p class="font-body font-400 text-ash text-xs mt-0.5">Sold by the pound only due to their size</p>
             </div>
-            <span class="font-body font-400 text-gold text-sm shrink-0">One Pound <span class="font-600">$25.00</span></span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="font-body font-400 text-gold text-sm">One Pound — <span class="font-600">$25.00</span></span>
+              <div class="qty-stepper flex items-center gap-1">
+                <button type="button" class="qty-dec w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="beef_ribs" aria-label="Decrease quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M5 12h14"/></svg></button>
+                <span class="qty-val w-7 text-center font-body font-600 text-ivory text-sm" data-item="beef_ribs">0</span>
+                <button type="button" class="qty-inc w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="beef_ribs" aria-label="Increase quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></button>
+              </div>
+            </div>
           </div>
 
           <!-- Pork Spare Ribs -->
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 py-3 border-b border-line_dark">
-            <span class="font-body font-600 text-ivory text-[15px]">Pork Spare Ribs</span>
-            <span class="font-body font-400 text-gold text-sm">Half Pound <span class="font-600">$12.00</span>&ensp;|&ensp;One Pound <span class="font-600">$22.00</span></span>
+          <div class="py-3 border-b border-line_dark">
+            <div class="font-body font-600 text-ivory text-[15px] mb-3">Pork Spare Ribs</div>
+            <div class="flex items-center justify-between gap-3 pl-2 mb-2">
+              <span class="font-body font-400 text-gold text-sm">Half Pound — <span class="font-600">$12.00</span></span>
+              <div class="qty-stepper flex items-center gap-1 shrink-0">
+                <button type="button" class="qty-dec w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="spare_ribs_half" aria-label="Decrease quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M5 12h14"/></svg></button>
+                <span class="qty-val w-7 text-center font-body font-600 text-ivory text-sm" data-item="spare_ribs_half">0</span>
+                <button type="button" class="qty-inc w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="spare_ribs_half" aria-label="Increase quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></button>
+              </div>
+            </div>
+            <div class="flex items-center justify-between gap-3 pl-2">
+              <span class="font-body font-400 text-gold text-sm">One Pound — <span class="font-600">$22.00</span></span>
+              <div class="qty-stepper flex items-center gap-1 shrink-0">
+                <button type="button" class="qty-dec w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="spare_ribs_pound" aria-label="Decrease quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M5 12h14"/></svg></button>
+                <span class="qty-val w-7 text-center font-body font-600 text-ivory text-sm" data-item="spare_ribs_pound">0</span>
+                <button type="button" class="qty-inc w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="spare_ribs_pound" aria-label="Increase quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></button>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- ── Barbecue Plates ── -->
         <div class="mb-10">
           <h3 class="font-display font-700 text-xl text-gold mb-1">Barbecue Plates</h3>
-          <p class="font-body font-400 text-ash text-xs italic mb-5">Served with your choice of two signature sides and sliced bread</p>
+          <p class="font-body font-400 text-ash text-xs italic mb-5">Served with your choice of two signature sides and sliced bread — pick sides in the Order Summary below</p>
 
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 py-3 border-b border-line_dark">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 py-3 border-b border-line_dark">
             <span class="font-body font-600 text-ivory text-[15px]">Prime Brisket Plate</span>
-            <span class="font-display font-700 text-gold text-sm">$19.00</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="font-display font-700 text-gold text-sm">$19.00</span>
+              <div class="qty-stepper flex items-center gap-1">
+                <button type="button" class="qty-dec w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="plate_brisket" aria-label="Decrease quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M5 12h14"/></svg></button>
+                <span class="qty-val w-7 text-center font-body font-600 text-ivory text-sm" data-item="plate_brisket">0</span>
+                <button type="button" class="qty-inc w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="plate_brisket" aria-label="Increase quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></button>
+              </div>
+            </div>
           </div>
 
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 py-3 border-b border-line_dark">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 py-3 border-b border-line_dark">
             <span class="font-body font-600 text-ivory text-[15px]">Pork Spare Rib Plate</span>
-            <span class="font-display font-700 text-gold text-sm">$16.00</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="font-display font-700 text-gold text-sm">$16.00</span>
+              <div class="qty-stepper flex items-center gap-1">
+                <button type="button" class="qty-dec w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="plate_spare_rib" aria-label="Decrease quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M5 12h14"/></svg></button>
+                <span class="qty-val w-7 text-center font-body font-600 text-ivory text-sm" data-item="plate_spare_rib">0</span>
+                <button type="button" class="qty-inc w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="plate_spare_rib" aria-label="Increase quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></button>
+              </div>
+            </div>
           </div>
 
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 py-3 border-b border-line_dark">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 py-3 border-b border-line_dark">
             <span class="font-body font-600 text-ivory text-[15px]">The Two-Meat Combo <span class="font-400 text-ash text-xs">(Brisket &amp; Spare Ribs)</span></span>
-            <span class="font-display font-700 text-gold text-sm">$24.00</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="font-display font-700 text-gold text-sm">$24.00</span>
+              <div class="qty-stepper flex items-center gap-1">
+                <button type="button" class="qty-dec w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="plate_combo" aria-label="Decrease quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M5 12h14"/></svg></button>
+                <span class="qty-val w-7 text-center font-body font-600 text-ivory text-sm" data-item="plate_combo">0</span>
+                <button type="button" class="qty-inc w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="plate_combo" aria-label="Increase quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></button>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- ── Whole Item Orders ── -->
         <div class="mb-10">
           <h3 class="font-display font-700 text-xl text-gold mb-1">Whole Item Orders</h3>
-          <p class="font-body font-400 text-ash text-xs italic mb-5">Feed a crowd — order an entire cut. Call ahead to reserve yours.</p>
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 py-3 border-b border-line_dark">
+          <p class="font-body font-400 text-ash text-xs italic mb-5">Feed a crowd — Kenyon will call to confirm your order before pickup.</p>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 py-3 border-b border-line_dark">
             <div>
               <span class="font-body font-600 text-ivory text-[15px]">Whole Brisket</span>
               <p class="font-body font-400 text-ash text-xs mt-0.5">USDA Prime, full packer — feeds 8 to 12</p>
             </div>
-            <span class="font-display font-700 text-gold text-sm shrink-0">$250.00</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="font-display font-700 text-gold text-sm">$250.00</span>
+              <div class="qty-stepper flex items-center gap-1">
+                <button type="button" class="qty-dec w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="whole_brisket" aria-label="Decrease quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M5 12h14"/></svg></button>
+                <span class="qty-val w-7 text-center font-body font-600 text-ivory text-sm" data-item="whole_brisket">0</span>
+                <button type="button" class="qty-inc w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="whole_brisket" aria-label="Increase quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></button>
+              </div>
+            </div>
           </div>
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 py-3 border-b border-line_dark">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 py-3 border-b border-line_dark">
             <div>
               <span class="font-body font-600 text-ivory text-[15px]">Whole Pork Butt</span>
               <p class="font-body font-400 text-ash text-xs mt-0.5">Slow-smoked, perfect for pulling — feeds 6 to 10</p>
             </div>
-            <span class="font-display font-700 text-gold text-sm shrink-0">$100.00</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="font-display font-700 text-gold text-sm">$100.00</span>
+              <div class="qty-stepper flex items-center gap-1">
+                <button type="button" class="qty-dec w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="whole_pork_butt" aria-label="Decrease quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M5 12h14"/></svg></button>
+                <span class="qty-val w-7 text-center font-body font-600 text-ivory text-sm" data-item="whole_pork_butt">0</span>
+                <button type="button" class="qty-inc w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="whole_pork_butt" aria-label="Increase quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></button>
+              </div>
+            </div>
           </div>
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 py-3 border-b border-line_dark">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 py-3 border-b border-line_dark">
             <div>
               <span class="font-body font-600 text-ivory text-[15px]">Whole Rack of Pork Ribs</span>
               <p class="font-body font-400 text-ash text-xs mt-0.5">Full spare rib rack, smoked low &amp; slow — feeds 3 to 4</p>
             </div>
-            <span class="font-display font-700 text-gold text-sm shrink-0">$70.00</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="font-display font-700 text-gold text-sm">$70.00</span>
+              <div class="qty-stepper flex items-center gap-1">
+                <button type="button" class="qty-dec w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="whole_pork_ribs" aria-label="Decrease quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M5 12h14"/></svg></button>
+                <span class="qty-val w-7 text-center font-body font-600 text-ivory text-sm" data-item="whole_pork_ribs">0</span>
+                <button type="button" class="qty-inc w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="whole_pork_ribs" aria-label="Increase quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></button>
+              </div>
+            </div>
           </div>
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 py-3 border-b border-line_dark">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 py-3 border-b border-line_dark">
             <div>
               <span class="font-body font-600 text-ivory text-[15px]">Whole Plate of Beef Ribs</span>
               <p class="font-body font-400 text-ash text-xs mt-0.5">Colossal bone-in beef ribs, full plate — feeds 3 to 4</p>
             </div>
-            <span class="font-display font-700 text-gold text-sm shrink-0">$180.00</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="font-display font-700 text-gold text-sm">$180.00</span>
+              <div class="qty-stepper flex items-center gap-1">
+                <button type="button" class="qty-dec w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="whole_beef_ribs" aria-label="Decrease quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M5 12h14"/></svg></button>
+                <span class="qty-val w-7 text-center font-body font-600 text-ivory text-sm" data-item="whole_beef_ribs">0</span>
+                <button type="button" class="qty-inc w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="whole_beef_ribs" aria-label="Increase quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></button>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- ── Signature Sides ── -->
         <div class="mb-12">
-          <h3 class="font-display font-700 text-xl text-gold mb-4">Signature Sides</h3>
-          <div class="flex flex-wrap gap-3">
-            <span class="font-body font-500 text-ivory text-sm bg-white/[.04] border border-line_dark px-4 py-2 rounded-full">Creamy Mac &amp; Cheese</span>
-            <span class="font-body font-500 text-ivory text-sm bg-white/[.04] border border-line_dark px-4 py-2 rounded-full">Slow-Cooked BBQ Beans</span>
-            <span class="font-body font-500 text-ivory text-sm bg-white/[.04] border border-line_dark px-4 py-2 rounded-full">Classic Potato Salad</span>
-            <span class="font-body font-500 text-ivory text-sm bg-white/[.04] border border-line_dark px-4 py-2 rounded-full">Extra Sliced Bread</span>
+          <h3 class="font-display font-700 text-xl text-gold mb-1">Signature Sides</h3>
+          <p class="font-body font-400 text-ash text-xs italic mb-5">Add à la carte to any order — $5 each.</p>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 py-3 border-b border-line_dark">
+            <span class="font-body font-600 text-ivory text-[15px]">Creamy Mac &amp; Cheese</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="font-display font-700 text-gold text-sm">$5.00</span>
+              <div class="qty-stepper flex items-center gap-1">
+                <button type="button" class="qty-dec w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="side_mac" aria-label="Decrease quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M5 12h14"/></svg></button>
+                <span class="qty-val w-7 text-center font-body font-600 text-ivory text-sm" data-item="side_mac">0</span>
+                <button type="button" class="qty-inc w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="side_mac" aria-label="Increase quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></button>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 py-3 border-b border-line_dark">
+            <span class="font-body font-600 text-ivory text-[15px]">Slow-Cooked BBQ Beans</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="font-display font-700 text-gold text-sm">$5.00</span>
+              <div class="qty-stepper flex items-center gap-1">
+                <button type="button" class="qty-dec w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="side_beans" aria-label="Decrease quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M5 12h14"/></svg></button>
+                <span class="qty-val w-7 text-center font-body font-600 text-ivory text-sm" data-item="side_beans">0</span>
+                <button type="button" class="qty-inc w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="side_beans" aria-label="Increase quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></button>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 py-3 border-b border-line_dark">
+            <span class="font-body font-600 text-ivory text-[15px]">Classic Potato Salad</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="font-display font-700 text-gold text-sm">$5.00</span>
+              <div class="qty-stepper flex items-center gap-1">
+                <button type="button" class="qty-dec w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="side_potato" aria-label="Decrease quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M5 12h14"/></svg></button>
+                <span class="qty-val w-7 text-center font-body font-600 text-ivory text-sm" data-item="side_potato">0</span>
+                <button type="button" class="qty-inc w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="side_potato" aria-label="Increase quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></button>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 py-3 border-b border-line_dark">
+            <span class="font-body font-600 text-ivory text-[15px]">Extra Sliced Bread</span>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="font-display font-700 text-gold text-sm">$5.00</span>
+              <div class="qty-stepper flex items-center gap-1">
+                <button type="button" class="qty-dec w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="side_bread" aria-label="Decrease quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M5 12h14"/></svg></button>
+                <span class="qty-val w-7 text-center font-body font-600 text-ivory text-sm" data-item="side_bread">0</span>
+                <button type="button" class="qty-inc w-8 h-8 rounded-full border border-line_dark flex items-center justify-center text-ivory hover:border-gold/60 hover:bg-gold/[.06] transition-colors duration-200" data-item="side_bread" aria-label="Increase quantity"><svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg></button>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- ── Order Now CTA ── -->
-        <div class="text-center">
-          <a href="tel:+19033554583" class="btn-primary inline-flex items-center justify-center gap-2 bg-gold text-slate text-sm font-600 px-10 py-4 rounded-full tracking-wide w-full sm:w-auto">
-            Order Now&ensp;—&ensp;(903) 355-4583
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-          </a>
+        <!-- ── Order Form ── -->
+        <div class="border-t border-line_dark pt-10 mt-2">
+
+          <!-- Success Message (hidden by default) -->
+          <div id="orderSuccess" class="hidden text-center py-8">
+            <div class="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-5">
+              <span class="text-3xl" aria-hidden="true">🔥</span>
+            </div>
+            <h3 class="font-display font-700 text-2xl text-ivory mb-3">Order In — Kenyon's On It</h3>
+            <p class="font-body font-400 text-ash text-base leading-relaxed max-w-sm mx-auto">Your order has been sent to the pit. Kenyon will call you within 24 hours to confirm your order and take payment over the phone. See you at pickup.</p>
+          </div>
+
+          <!-- Form -->
+          <div id="orderFormWrap">
+
+            <div class="text-center mb-8">
+              <p class="pill text-[11px] font-body font-600 text-gold uppercase tracking-[.2em] mb-3">Place Your Order</p>
+              <h3 class="font-display font-800 text-2xl sm:text-3xl text-ivory tracking-tight">Submit Your Order</h3>
+              <p class="font-body font-400 text-ash text-sm mt-2">Tell us what you want and when. We'll confirm by email or text.</p>
+              <div class="w-12 h-[2px] bg-gold rounded-full mx-auto mt-5"></div>
+            </div>
+
+            <!-- ── Pickup Details ── -->
+            <div class="mb-7">
+              <p class="font-display font-700 text-sm text-gold uppercase tracking-[.12em] mb-4">Pickup Details</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="flex flex-col gap-1.5">
+                  <label for="orderDate" class="font-body font-500 text-xs text-ivory/60 uppercase tracking-wider">Pickup Date</label>
+                  <input type="date" id="orderDate" name="orderDate" class="w-full bg-slate/60 border border-line_dark text-ivory font-body text-sm rounded-xl px-4 py-3 outline-none focus:border-gold/60 focus:ring-1 focus:ring-gold/30 transition-colors duration-200" style="color-scheme: dark;" />
+                </div>
+                <div class="flex flex-col gap-1.5">
+                  <label for="orderTime" class="font-body font-500 text-xs text-ivory/60 uppercase tracking-wider">Pickup Time</label>
+                  <input type="time" id="orderTime" name="orderTime" class="w-full bg-slate/60 border border-line_dark text-ivory font-body text-sm rounded-xl px-4 py-3 outline-none focus:border-gold/60 focus:ring-1 focus:ring-gold/30 transition-colors duration-200" style="color-scheme: dark;" />
+                </div>
+              </div>
+              <p class="font-body font-400 text-ash/70 text-xs mt-2 italic">Hours: Fri – Sun, 11 AM – 5 PM</p>
+            </div>
+
+            <!-- ── Your Order Summary ── -->
+            <div class="mb-7">
+              <p class="font-display font-700 text-sm text-gold uppercase tracking-[.12em] mb-4">Your Order</p>
+              <div id="cartSummary" class="bg-slate/40 border border-line_dark rounded-2xl p-5 sm:p-6">
+                <!-- Empty state -->
+                <div id="cartEmpty" class="text-center py-3">
+                  <p class="font-body font-400 text-ash text-sm italic">No items yet — add from the menu above to get started.</p>
+                </div>
+                <!-- Populated state -->
+                <div id="cartPopulated" class="hidden">
+                  <div id="cartLineItems" class="flex flex-col"></div>
+                  <div class="border-t border-line_dark pt-4 mt-4 flex items-center justify-between">
+                    <span class="font-display font-700 text-ivory text-base">Subtotal</span>
+                    <span id="cartSubtotalAmount" class="font-display font-800 text-gold text-lg">$0.00</span>
+                  </div>
+                  <div id="cartWholeItemNotice" class="hidden mt-3 flex items-start gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gold/70 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+                    <p class="font-body font-400 text-ash text-xs italic leading-relaxed">Whole items require a confirmation call from Kenyon before pickup.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Contact Info ── -->
+            <div class="mb-8">
+              <p class="font-display font-700 text-sm text-gold uppercase tracking-[.12em] mb-4">Contact Info</p>
+              <div class="flex flex-col gap-4">
+                <div class="flex flex-col gap-1.5">
+                  <label for="orderName" class="font-body font-500 text-xs text-ivory/60 uppercase tracking-wider">Your Name</label>
+                  <input type="text" id="orderName" name="orderName" placeholder="Jane Smith" class="w-full bg-slate/60 border border-line_dark text-ivory font-body text-sm rounded-xl px-4 py-3 outline-none focus:border-gold/60 focus:ring-1 focus:ring-gold/30 transition-colors duration-200 placeholder-ash/40" />
+                </div>
+                <div class="flex flex-col gap-1.5">
+                  <label for="orderEmail" class="font-body font-500 text-xs text-ivory/60 uppercase tracking-wider">Email Address</label>
+                  <input type="email" id="orderEmail" name="orderEmail" placeholder="jane@example.com" class="w-full bg-slate/60 border border-line_dark text-ivory font-body text-sm rounded-xl px-4 py-3 outline-none focus:border-gold/60 focus:ring-1 focus:ring-gold/30 transition-colors duration-200 placeholder-ash/40" />
+                </div>
+                <div class="flex flex-col gap-1.5">
+                  <label for="orderPhone" class="font-body font-500 text-xs text-ivory/60 uppercase tracking-wider">Phone Number</label>
+                  <input type="tel" id="orderPhone" name="orderPhone" placeholder="(555) 000-0000" class="w-full bg-slate/60 border border-line_dark text-ivory font-body text-sm rounded-xl px-4 py-3 outline-none focus:border-gold/60 focus:ring-1 focus:ring-gold/30 transition-colors duration-200 placeholder-ash/40" />
+                </div>
+              </div>
+            </div>
+
+            <!-- ── Extra Comments ── -->
+            <div class="mb-8">
+              <p class="font-display font-700 text-sm text-gold uppercase tracking-[.12em] mb-4">Extra Comments</p>
+              <div class="flex flex-col gap-1.5">
+                <label for="orderComments" class="font-body font-500 text-xs text-ivory/60 uppercase tracking-wider">Anything else we should know?</label>
+                <textarea id="orderComments" name="orderComments" rows="3" placeholder="Dietary restrictions, allergies, special requests..." class="w-full bg-slate/60 border border-line_dark text-ivory font-body text-sm rounded-xl px-4 py-3 outline-none focus:border-gold/60 focus:ring-1 focus:ring-gold/30 transition-colors duration-200 placeholder-ash/40 resize-none"></textarea>
+              </div>
+            </div>
+
+            <!-- ── Submit ── -->
+            <button type="button" id="orderSubmitBtn" disabled class="btn-primary w-full inline-flex items-center justify-center gap-2 bg-gold text-slate text-sm font-600 px-8 py-4 rounded-full tracking-wide disabled:opacity-40 disabled:cursor-not-allowed">
+              <span id="submitBtnLabel">Add items to your order</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+
+          </div><!-- /orderFormWrap -->
         </div>
       </div>
     </div>
@@ -954,7 +1166,7 @@
           </button>
           <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out">
             <p class="font-body font-400 text-ash text-[15px] leading-relaxed px-7 pb-6">
-              Yes — and we highly recommend it, especially for beef ribs. Give us a call at <a href="tel:+19033554583" class="text-gold hover:text-gold_l transition-colors duration-200 font-600">(903) 355-4583</a> to place your order ahead of time so we can make sure we have your cut ready.
+              Yes — and we highly recommend it, especially for beef ribs. <a href="#" onclick="openMenuModal(true); return false;" class="text-gold hover:text-gold_l transition-colors duration-200 font-600 cursor-pointer">Place your order online</a> ahead of time so we can make sure we have your cut ready.
             </p>
           </div>
         </div>
@@ -999,7 +1211,7 @@
           </button>
           <div class="faq-answer max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out">
             <p class="font-body font-400 text-ash text-[15px] leading-relaxed px-7 pb-6">
-              Absolutely. We cater private events, weddings, corporate gatherings, and more. Kenyon brings the pit and the passion directly to your event. Call us at <a href="tel:+19033554583" class="text-gold hover:text-gold_l transition-colors duration-200 font-600">(903) 355-4583</a> or reach out through our contact info below to get a quote.
+              Absolutely. We cater private events, weddings, corporate gatherings, and more. Kenyon brings the pit and the passion directly to your event. <a href="#" onclick="openCateringModal(); return false;" class="text-gold hover:text-gold_l transition-colors duration-200 font-600 cursor-pointer">Request a quote here</a> and we'll get back to you within 24 hours.
             </p>
           </div>
         </div>
@@ -1039,9 +1251,9 @@
       <!-- Bottom CTA -->
       <div class="text-center mt-14">
         <p class="font-body font-400 text-ash text-base mb-5">Still have a question? We're happy to help.</p>
-        <a href="tel:+19033554583" class="btn-primary inline-flex items-center gap-2 bg-gold text-slate text-sm font-600 px-8 py-3.5 rounded-full tracking-wide">
-          Call (903) 355-4583
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+        <a href="mailto:info@hbbbq.com" class="btn-primary inline-flex items-center gap-2 bg-gold text-slate text-sm font-600 px-8 py-3.5 rounded-full tracking-wide">
+          Email Us — info@hbbbq.com
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
         </a>
       </div>
 
@@ -1219,11 +1431,25 @@
     const menuBackdrop = document.getElementById('menuBackdrop');
     const menuModalClose = document.getElementById('menuModalClose');
 
-    function openMenuModal() {
+    function openMenuModal(scrollToOrder) {
       menuModal.classList.remove('pointer-events-none');
       menuModal.style.opacity = '1';
       menuContainer.style.transform = 'translateY(0)';
       document.body.style.overflow = 'hidden';
+
+      /* Lock pickup date to today or later — prevents junk past-date submissions */
+      var orderDateInput = document.getElementById('orderDate');
+      if (orderDateInput) orderDateInput.min = new Date().toISOString().split('T')[0];
+
+      /* Order-intent clicks land directly on the form. Browse-intent clicks land at the top. */
+      setTimeout(function() {
+        if (scrollToOrder) {
+          var formEl = document.getElementById('orderFormWrap');
+          if (formEl) formEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          menuContainer.scrollTo({ top: 0 });
+        }
+      }, 450);
     }
 
     function closeMenuModal() {
@@ -1266,7 +1492,7 @@
       }, 400);
     }
 
-    orderCtaBtn.addEventListener('click', openOrderModal);
+    orderCtaBtn.addEventListener('click', function() { openMenuModal(true); });
     orderModalClose.addEventListener('click', closeOrderModal);
     orderBackdrop.addEventListener('click', closeOrderModal);
     document.addEventListener('keydown', (e) => {
@@ -1454,15 +1680,271 @@
             { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }
           );
         } else {
-          alert('Something went wrong. Please call us at (903) 355-4583 to book your catering.');
+          alert('Something went wrong. Please try again or email us at info@hbbbq.com to book your catering.');
           cateringSubmitBtn.disabled = false;
           cateringSubmitBtn.innerHTML = 'Submit Quote Request <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>';
         }
       })
       .catch(function() {
-        alert('Something went wrong. Please call us at (903) 355-4583 to book your catering.');
+        alert('Something went wrong. Please try again or email us at info@hbbbq.com to book your catering.');
         cateringSubmitBtn.disabled = false;
         cateringSubmitBtn.innerHTML = 'Submit Quote Request <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>';
+      });
+    });
+
+    /* ── 12. Order Cart Logic (lives inside menu modal) ── */
+    const orderSubmitBtn = document.getElementById('orderSubmitBtn');
+    const orderFormWrap  = document.getElementById('orderFormWrap');
+    const orderSuccess   = document.getElementById('orderSuccess');
+
+    /* Menu catalog — single source of truth for prices & metadata */
+    const menuCatalog = {
+      brisket_half:     { name: 'Prime Brisket (½ lb)',        price: 14.99, sides: 0 },
+      brisket_pound:    { name: 'Prime Brisket (1 lb)',        price: 29.99, sides: 0 },
+      beef_ribs:        { name: 'Angus Beef Ribs (1 lb)',      price: 25.00, sides: 0 },
+      spare_ribs_half:  { name: 'Pork Spare Ribs (½ lb)',      price: 12.00, sides: 0 },
+      spare_ribs_pound: { name: 'Pork Spare Ribs (1 lb)',      price: 22.00, sides: 0 },
+      plate_brisket:    { name: 'Prime Brisket Plate',         price: 19.00, sides: 2 },
+      plate_spare_rib:  { name: 'Pork Spare Rib Plate',        price: 16.00, sides: 2 },
+      plate_combo:      { name: 'Two-Meat Combo Plate',        price: 24.00, sides: 2 },
+      whole_brisket:    { name: 'Whole Brisket',               price: 250.00, sides: 0, whole: true },
+      whole_pork_butt:  { name: 'Whole Pork Butt',             price: 100.00, sides: 0, whole: true },
+      whole_pork_ribs:  { name: 'Whole Rack of Pork Ribs',     price: 70.00,  sides: 0, whole: true },
+      whole_beef_ribs:  { name: 'Whole Plate of Beef Ribs',    price: 180.00, sides: 0, whole: true },
+      side_mac:         { name: 'Creamy Mac & Cheese',         price: 5.00,  sides: 0 },
+      side_beans:       { name: 'Slow-Cooked BBQ Beans',       price: 5.00,  sides: 0 },
+      side_potato:      { name: 'Classic Potato Salad',        price: 5.00,  sides: 0 },
+      side_bread:       { name: 'Extra Sliced Bread',          price: 5.00,  sides: 0 }
+    };
+
+    const SIDE_OPTIONS = ['Mac & Cheese', 'BBQ Beans', 'Potato Salad', 'Extra Bread', 'No preference'];
+
+    const cart = {};        /* { itemId: qty } */
+    const plateSides = {};  /* { 'plate_brisket_0_0': 'Mac & Cheese', ... } */
+
+    function formatUSD(n) { return '$' + n.toFixed(2); }
+
+    function updateQty(itemId, delta) {
+      const current = cart[itemId] || 0;
+      const newQty = Math.max(0, current + delta);
+      if (newQty === 0) delete cart[itemId];
+      else cart[itemId] = newQty;
+
+      /* Update stepper display */
+      const valEl = document.querySelector('.qty-val[data-item="' + itemId + '"]');
+      if (valEl) valEl.textContent = newQty;
+
+      /* Prune sides entries for any plate instance that no longer exists */
+      if (menuCatalog[itemId] && menuCatalog[itemId].sides > 0) {
+        Object.keys(plateSides).forEach(function(key) {
+          if (key.indexOf(itemId + '_') === 0) {
+            const parts = key.split('_');
+            const instanceIdx = parseInt(parts[parts.length - 2], 10);
+            if (instanceIdx >= newQty) delete plateSides[key];
+          }
+        });
+      }
+
+      renderCart();
+    }
+
+    function renderSidesSelectors(itemId, qty, sideCount) {
+      let html = '<div class="flex flex-col gap-2 mt-2 pl-3 border-l-2 border-gold/20">';
+      for (let i = 0; i < qty; i++) {
+        html += '<div class="flex flex-col gap-1">';
+        if (qty > 1) {
+          html += '<span class="font-body font-500 text-ash text-[10px] uppercase tracking-wider">Plate ' + (i + 1) + '</span>';
+        }
+        html += '<div class="grid grid-cols-2 gap-2">';
+        for (let s = 0; s < sideCount; s++) {
+          const key = itemId + '_' + i + '_' + s;
+          const currentVal = plateSides[key] || '';
+          html += '<select class="plate-side-select bg-slate/60 border border-line_dark text-ivory font-body text-xs rounded-lg px-2 py-2 outline-none focus:border-gold/60 focus:ring-1 focus:ring-gold/30 transition-colors duration-200" data-key="' + key + '" style="color-scheme: dark;">';
+          html += '<option value="">— Side ' + (s + 1) + ' —</option>';
+          SIDE_OPTIONS.forEach(function(opt) {
+            const sel = currentVal === opt ? ' selected' : '';
+            html += '<option value="' + opt + '"' + sel + '>' + opt + '</option>';
+          });
+          html += '</select>';
+        }
+        html += '</div></div>';
+      }
+      html += '</div>';
+      return html;
+    }
+
+    function renderCart() {
+      const lineItemsEl   = document.getElementById('cartLineItems');
+      const emptyEl       = document.getElementById('cartEmpty');
+      const populatedEl   = document.getElementById('cartPopulated');
+      const subtotalEl    = document.getElementById('cartSubtotalAmount');
+      const wholeNoticeEl = document.getElementById('cartWholeItemNotice');
+      const submitLabel   = document.getElementById('submitBtnLabel');
+
+      const entries = Object.entries(cart);
+
+      if (entries.length === 0) {
+        emptyEl.classList.remove('hidden');
+        populatedEl.classList.add('hidden');
+        orderSubmitBtn.disabled = true;
+        submitLabel.textContent = 'Add items to your order';
+        return;
+      }
+
+      emptyEl.classList.add('hidden');
+      populatedEl.classList.remove('hidden');
+      orderSubmitBtn.disabled = false;
+
+      let total = 0;
+      let hasWhole = false;
+      const html = [];
+
+      entries.forEach(function(pair) {
+        const itemId = pair[0], qty = pair[1];
+        const meta = menuCatalog[itemId];
+        if (!meta) return;
+        const lineTotal = meta.price * qty;
+        total += lineTotal;
+        if (meta.whole) hasWhole = true;
+
+        let row = '<div class="py-3 border-b border-line_dark/50 last:border-0">';
+        row += '<div class="flex items-center justify-between gap-3">';
+        row += '<span class="font-body font-500 text-ivory text-sm">' + qty + '× ' + meta.name + '</span>';
+        row += '<span class="font-body font-600 text-gold text-sm shrink-0">' + formatUSD(lineTotal) + '</span>';
+        row += '</div>';
+        if (meta.sides > 0) row += renderSidesSelectors(itemId, qty, meta.sides);
+        row += '</div>';
+        html.push(row);
+      });
+
+      lineItemsEl.innerHTML = html.join('');
+      subtotalEl.textContent = formatUSD(total);
+      submitLabel.textContent = 'Submit Order — ' + formatUSD(total);
+
+      if (hasWhole) wholeNoticeEl.classList.remove('hidden');
+      else wholeNoticeEl.classList.add('hidden');
+
+      /* Wire the freshly-rendered side selectors */
+      document.querySelectorAll('.plate-side-select').forEach(function(sel) {
+        sel.addEventListener('change', function() {
+          plateSides[this.dataset.key] = this.value;
+        });
+      });
+    }
+
+    /* Wire all stepper buttons */
+    document.querySelectorAll('.qty-inc').forEach(function(btn) {
+      btn.addEventListener('click', function() { updateQty(btn.dataset.item, 1); });
+    });
+    document.querySelectorAll('.qty-dec').forEach(function(btn) {
+      btn.addEventListener('click', function() { updateQty(btn.dataset.item, -1); });
+    });
+
+    /* Reset cart completely — called on successful submit */
+    function resetCart() {
+      Object.keys(cart).forEach(function(k) { delete cart[k]; });
+      Object.keys(plateSides).forEach(function(k) { delete plateSides[k]; });
+      document.querySelectorAll('.qty-val').forEach(function(el) { el.textContent = '0'; });
+      renderCart();
+    }
+
+    /* Reset order form state when menu modal closes */
+    function resetOrderFormState() {
+      setTimeout(function() {
+        if (orderFormWrap && orderSuccess) {
+          orderFormWrap.classList.remove('hidden');
+          orderSuccess.classList.add('hidden');
+        }
+      }, 400);
+    }
+    menuModalClose.addEventListener('click', resetOrderFormState);
+    menuBackdrop.addEventListener('click', resetOrderFormState);
+
+    /* Initial render to set empty state */
+    renderCart();
+
+    /* Order submission — serializes cart and posts to Formspree */
+    orderSubmitBtn.addEventListener('click', function() {
+      if (Object.keys(cart).length === 0) {
+        alert('Please add at least one item to your order.');
+        return;
+      }
+
+      const date     = document.getElementById('orderDate').value;
+      const time     = document.getElementById('orderTime').value;
+      const name     = document.getElementById('orderName').value.trim();
+      const email    = document.getElementById('orderEmail').value.trim();
+      const phone    = document.getElementById('orderPhone').value.trim();
+      const comments = document.getElementById('orderComments').value.trim();
+
+      if (!name || !email || !phone) {
+        alert('Please fill in your name, email, and phone number.');
+        return;
+      }
+
+      /* Build readable order summary */
+      let total = 0;
+      const lines = [];
+      Object.entries(cart).forEach(function(pair) {
+        const itemId = pair[0], qty = pair[1];
+        const meta = menuCatalog[itemId];
+        const lineTotal = meta.price * qty;
+        total += lineTotal;
+        let line = qty + '× ' + meta.name + ' — ' + formatUSD(lineTotal);
+        if (meta.sides > 0) {
+          for (let i = 0; i < qty; i++) {
+            const sidesPicked = [];
+            for (let s = 0; s < meta.sides; s++) {
+              const key = itemId + '_' + i + '_' + s;
+              sidesPicked.push(plateSides[key] || 'No preference');
+            }
+            line += '\n    Plate ' + (i + 1) + ': ' + sidesPicked.join(' & ');
+          }
+        }
+        lines.push(line);
+      });
+
+      const formData = {
+        'Order':           lines.join('\n'),
+        'Subtotal':        formatUSD(total),
+        'Pickup Date':     date || 'Not specified',
+        'Pickup Time':     time || 'Not specified',
+        'Name':            name,
+        'Email':           email,
+        'Phone':           phone,
+        'Extra Comments':  comments || 'None',
+        '_subject':        'New Online Order — H&B BBQ — ' + formatUSD(total)
+      };
+
+      orderSubmitBtn.disabled = true;
+      document.getElementById('submitBtnLabel').textContent = 'Sending...';
+
+      fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+      .then(function(response) {
+        if (response.ok) {
+          orderFormWrap.classList.add('hidden');
+          orderSuccess.classList.remove('hidden');
+          gsap.fromTo(orderSuccess,
+            { opacity: 0, y: 10 },
+            { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }
+          );
+          resetCart();
+          /* Wait for the hide/show transition, then center the success message in view */
+          setTimeout(function() {
+            orderSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 100);
+        } else {
+          alert('Something went wrong. Please try again or email us at info@hbbbq.com to place your order.');
+          renderCart(); /* re-enable submit with correct label */
+        }
+      })
+      .catch(function() {
+        alert('Something went wrong. Please try again or email us at info@hbbbq.com to place your order.');
+        renderCart();
       });
     });
 
