@@ -1441,14 +1441,9 @@
       var orderDateInput = document.getElementById('orderDate');
       if (orderDateInput) orderDateInput.min = new Date().toISOString().split('T')[0];
 
-      /* Order-intent clicks land directly on the form. Browse-intent clicks land at the top. */
+      /* Always open at the top — the menu is the ordering surface now */
       setTimeout(function() {
-        if (scrollToOrder) {
-          var formEl = document.getElementById('orderFormWrap');
-          if (formEl) formEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-          menuContainer.scrollTo({ top: 0 });
-        }
+        menuContainer.scrollTo({ top: 0 });
       }, 450);
     }
 
